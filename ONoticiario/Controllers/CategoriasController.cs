@@ -140,7 +140,7 @@ namespace ONoticiario.Controllers
             }
             catch (Exception)
             {
-                ModelState.AddModelError("", "Nao é possivel eliminar a categoria pois contem noticias associada à própria");
+                ModelState.AddModelError("", "Nao é possivel eliminar a categoria pois contem noticias associada à mesma");
                 return View(categorias);
             }
           

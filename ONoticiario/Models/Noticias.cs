@@ -21,10 +21,6 @@ namespace ONoticiario.Models
         public int ID { get; set; }
 
 
-
-
-
-
         //Atributos da class Noticias
         //Data em fortmato yyyyMMdd
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
@@ -41,7 +37,7 @@ namespace ONoticiario.Models
 
 
 
-        //foreign key Utilizadores
+        //Chave forasteira
         [ForeignKey("Utilizador")]
         public int UtilizadorFK { get; set; }
         public virtual Utilizadores Utilizador { get; set; }
@@ -58,11 +54,10 @@ namespace ONoticiario.Models
 
 
 
-        //complementar a informação do relacionamento de uma noticia com multiplos comentarios
+        //Relacionar a noticia aos varios comentarios
         public virtual ICollection<Comentarios> ListaComentarios { get; set; }
-        //complementar a informação do relacionamento de uma noticia com autores
-    
-        //complementar a informação do relacionamento de uma noticia várias Categorias
+
+        //Relacionar a noticia às varias categorias
         public virtual ICollection<Categorias> ListaCategorias { get; set; }
     }
 }

@@ -42,12 +42,13 @@ namespace ONoticiario.Models
         [RegularExpression("^[a-zA-Z0-9_.,áãàâÃÀÁÂÔÒÓÕòóôõÉÈÊéèêíìîÌÍÎúùûçÇ!-.? ]*", ErrorMessage = "O {0} tem caracteres inválidos!")]
         public string Descricao { get; set; }
 
-
+        //Imagem do utilizador
         public string Avatar { get; set; }
+
         //atributo auxiliar para relacionar a tabela dos utilizadores Asp.Net com a tabela utilizadores
         public string Username { get; set; }
 
-        //Complementaçao dos relacionamentos de um utilizador com multiplos comentarios e escrever multiplas noticias
+        //Relacionar o utilizadoes às varias noticias onde escreveu e quais comentarios
         public virtual ICollection<Comentarios> ListaComentarios { get; set; }
         public virtual ICollection<Noticias> ListaNoticias { get; set; }
     }

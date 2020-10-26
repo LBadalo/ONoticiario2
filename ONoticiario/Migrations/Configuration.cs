@@ -25,10 +25,10 @@ namespace ONoticiario.Migrations
                 new Categorias{ID=1,TipoCategoria="Mundo"},
                 new Categorias{ID=2,TipoCategoria="Gaming"},
                 new Categorias{ID=3,TipoCategoria="Politica"},
-                new Categorias{ID=4,TipoCategoria="Saúde"},
+                new Categorias{ID=4,TipoCategoria="Saude"},
                 new Categorias{ID=5,TipoCategoria="Esports"},
                 new Categorias{ID=6,TipoCategoria="Mobile"},
-                new Categorias{ID=7,TipoCategoria="Informática"},
+                new Categorias{ID=7,TipoCategoria="Informatica"},
                 new Categorias{ID=8,TipoCategoria="Outros"}
             };
             categorias.ForEach(aa => context.Categorias.AddOrUpdate(a => a.TipoCategoria, aa));
@@ -37,8 +37,8 @@ namespace ONoticiario.Migrations
             //Utilizadores
             var utilizadores = new List<Utilizadores> {
                 new Utilizadores {Avatar="default.png", ID=1,Descricao="Administrador da Aplicaçao web",Nome="Luis Badalo",Username="admin@ipt.pt",DataNascimento= new DateTime(1997, 9, 29) },
-                new Utilizadores { Avatar = "default.png", ID = 2, Descricao = "Jornalista da Aplicaçao web", Nome = "Rafael Sousa", Username = "Jornalista@ipt.com", DataNascimento = new DateTime(1985, 2, 23) },
-                new Utilizadores {Avatar="default.png", ID=3,Nome="Joao Martins",Descricao="Jornalista da pagina web",Username="teste@ipt.pt", DataNascimento=new DateTime(1995,2,20)}  
+                new Utilizadores {Avatar = "default.png", ID = 2, Descricao = "Jornalista da Aplicaçao web", Nome = "Rafael Sousa", Username = "Jornalista@ipt.com", DataNascimento = new DateTime(1985, 2, 23) },
+                new Utilizadores {Avatar="default.png", ID=3, Descricao="Jornalista da pagina web", Nome="Joao Martins",Username="teste@ipt.pt", DataNascimento=new DateTime(1995,2,20)}  
             };
             utilizadores.ForEach(aa => context.Utilizadores.AddOrUpdate(a => a.Nome, aa));
             context.SaveChanges();

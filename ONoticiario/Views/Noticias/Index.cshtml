@@ -21,8 +21,10 @@
 
 <div class="container" style="padding-top:5px;">
     <div class="row" style="">
+        
         @foreach (var noticia in Model)
         {
+          @*Apresentação das noticias na Página Inicial*@
             <div class="col-md-4 d-flex align-items-stretch" style="margin-bottom:20px;">
                 <div class="card text-white bg-dark" style="width: 22rem;">
                     <img src="~/imagens/Noticias/@Html.DisplayTextFor(n => noticia.Capa)" class="card-img-top" alt="..." style="max-height: 189px;">
@@ -37,10 +39,12 @@
                         <a href="@Url.Action("Details","Noticias",new { id = noticia.ID })" style="margin-bottom:15px;">
                             <a class="badge badge-secondary comments" aria-hidden="true">Comentários: @noticia.ListaComentarios.Count()</a>
                         </a>
+                        @*Se contem role*@
                         @if (User.IsInRole("Admin"))
                         {
                             <br />
                             <div style="margin-top:25px;">
+                                @*Mostrar butões*@
                                 @Html.ActionLink("Editar", "Edit", new { id = noticia.ID }, new { @class = "btn btn-primary btnEdit btn-sm" })
                                 @Html.ActionLink("Remover", "Delete", new { id = noticia.ID }, new { @class = "btn btn-danger btnRemove btn-sm" })
                             </div>
@@ -49,6 +53,7 @@
                     </div>
                 </div>
             </div>
+            
         }
 
     </div>

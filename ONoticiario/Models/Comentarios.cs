@@ -24,12 +24,12 @@ namespace ONoticiario.Models
         [RegularExpression("^[a-zA-Z0-9_.,áãàâÃÀÁÂÔÒÓÕòóôõÉÈÊéèêíìîÌÍÎúùûçÇ!-.? ]*", ErrorMessage = "O {0} tem caracteres inválidos!")]
         public string Descricao { get; set; }
 
-        //chaves forasteiras Utilizadores e Noticias
+        //Forasteira
         [ForeignKey("Utilizador")]
         public int UtilizadorFK { get; set; }
         public virtual Utilizadores Utilizador { get; set; }
 
-  
+        //hora do comentário
         public DateTime Data { get; set; }
 
         //foreign key Noticias

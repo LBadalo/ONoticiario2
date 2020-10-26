@@ -190,7 +190,7 @@ namespace IdentitySample.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ModelState.AddModelError("", "Something failed.");
+            ModelState.AddModelError("", "Erro ao editar.");
             return View();
         }
 

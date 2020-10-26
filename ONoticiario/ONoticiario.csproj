@@ -262,16 +262,25 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="imagens\Avatares\background.png" />
-    <Content Include="imagens\Avatares\default.jpg" />
     <Content Include="imagens\Avatares\comments.png" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="imagens\Noticias\coldzera.jpg" />
-    <Content Include="imagens\Noticias\Cyberpunk.jpg" />
-    <Content Include="imagens\Noticias\Gears5.jpg" />
-    <Content Include="imagens\Noticias\PlayStation4.jpg" />
-    <Content Include="imagens\Noticias\Pokemon.jpeg" />
+    <Content Include="imagens\Avatares\Default.png" />
+    <Content Include="imagens\Core_Img\archive.png" />
+    <Content Include="imagens\Core_Img\diamond.png" />
+    <Content Include="imagens\Core_Img\file.png" />
+    <Content Include="imagens\Core_Img\id-card.png" />
+    <Content Include="imagens\Core_Img\id-card2.png" />
+    <Content Include="imagens\Core_Img\idea.png" />
+    <Content Include="imagens\Core_Img\list.png" />
+    <Content Include="imagens\Core_Img\Logo.png" />
+    <Content Include="imagens\Core_Img\map-pin.png" />
+    <Content Include="imagens\Core_Img\paper-plane.png" />
+    <Content Include="imagens\Core_Img\smartphone.png" />
+    <Content Include="imagens\Noticias\covid19_24_10_2020.png" />
+    <Content Include="imagens\Noticias\DamWon_24_10_2020.jpg" />
+    <Content Include="imagens\Noticias\MagSafeIphone_24_10_2020.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -381,7 +390,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="imagens\Core_Img\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

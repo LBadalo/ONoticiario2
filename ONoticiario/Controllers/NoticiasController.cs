@@ -82,7 +82,7 @@ namespace ONoticiario.Controllers
         /// <returns>Os detalhes de uma noticia</returns>
         /// *************************************************************************
 
-        [AllowAnonymous]//Apesar de existir restriçoes os utilizadores anonimos podem vizualizar noticias
+        [AllowAnonymous]//Apesar de existirem restrições os utilizadores anonimos podem vizualizar noticias
         // GET: Noticias/Details/5
         public ActionResult Details(int? id)
         {
@@ -421,7 +421,7 @@ namespace ONoticiario.Controllers
             catch (Exception)
             {
 
-                ModelState.AddModelError("", "Não foi possivel concratizar a operação.");
+                ModelState.AddModelError("", "Não foi possivel concretizar a operação.");
             }
            
             return View(noticia);
@@ -497,7 +497,7 @@ namespace ONoticiario.Controllers
             }
             catch (Exception)
             {
-                ModelState.AddModelError("", "Não foi possivel concratizar a operação.");
+                ModelState.AddModelError("", "Não foi possivel concretizar a operação.");
             }
             return View(noticia);
           

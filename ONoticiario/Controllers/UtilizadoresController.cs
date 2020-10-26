@@ -157,7 +157,7 @@ namespace ONoticiario.Controllers
             {
 
 
-                ModelState.AddModelError("", "Não foi possivel concratizar a operação.");
+                ModelState.AddModelError("", "Não foi possivel concretizar a operação.");
             }
            
             return View(utilizadores);
