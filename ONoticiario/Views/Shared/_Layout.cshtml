@@ -27,7 +27,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Sobre", "About", null, new { @class = "nav-link" })
+                    @Html.ActionLink("Sobre", "About", "Noticias", null, new { @class = "nav-link" })
                 </li>
                 @if (Request.IsAuthenticated && (User.IsInRole("Admin")))
                 {
@@ -39,14 +39,18 @@
                         </div>
                     </li>
                 }
-
+               
+                    <form method="get" action="@Url.Action("Search","Noticias")" class="form-inline">
+                        <input class="form-control" type="search" name="search" placeholder="Titulo" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                    </form>
             </ul>
+           
+
+
+
             @Html.Partial("_LoginPartial")
 
-            <form method="get" action="@Url.Action("Search","Noticias")" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Titulo" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-            </form>
             @if (Request.IsAuthenticated)
             {
                 <a class="btn btn-danger" href="javascript:document.getElementById('logoutForm').submit()">Sair!</a>
@@ -67,7 +71,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Date.Year - Por Trás do Monitor</p>
+            <p>&copy; @DateTime.Now.Date.Year - ONoticiario</p>
         </footer>
     </div>
 

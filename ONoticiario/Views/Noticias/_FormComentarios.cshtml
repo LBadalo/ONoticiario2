@@ -18,7 +18,7 @@
         <div class="text-dark form-group">
             <link rel="stylesheet" type="text/css" href="~/Content/personalCss.css">
             <div class="col-md-12" style="justify-content:center;">
-                @Html.TextAreaFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control text-center", rows = "2", maxlength = "180" } })
+                @Html.TextAreaFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control text-center", @rows = "2", maxlength = "180"} })
                 @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.NoticiasFK)
                 <input type="submit" value="Comentar" class="btn btn-lg btn-success" style="" />

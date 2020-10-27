@@ -196,7 +196,7 @@ namespace ONoticiario.Controllers
                 model.IdsCategorias = new int[db.Categorias.Count()];
                 model.ListaCategorias = db.Categorias.ToList();
                 //gerar mensagem de erro para indicar o utilizador que nao foi inserida nenhuma imagem
-                ModelState.AddModelError("", "Categorias de Preenchiemento Obrigatório!");
+                ModelState.AddModelError("", "Categorias de Preenchimento Obrigatório!");
                 //redirecionar o utilizador para a View
                 return View(model);
             }

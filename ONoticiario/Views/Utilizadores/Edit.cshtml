@@ -13,7 +13,7 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal bg-dark p-4">
+    <div class="form-horizontal p-4" style = "background-color: #15202B;">
         <h4>Editar Perfil</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -49,7 +49,7 @@
                    class="btn btn-info btn-sm"
                    name="avatarUpload"
                    style=""
-                   accept=".jpg"
+                   accept=".jpg, .png"
                    onchange="atulizaImagemEdit(event)" />
         </div>
         <div>

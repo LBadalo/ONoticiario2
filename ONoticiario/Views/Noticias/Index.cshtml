@@ -8,11 +8,11 @@
 
 
 @{
-    ViewBag.Title = "Notícias";
+    ViewBag.Title = "Home";
 }
 
 
-@if (User.IsInRole("Admin") && Request.IsAuthenticated)
+@if (User.IsInRole("Jornalista") || User.IsInRole("Admin") && Request.IsAuthenticated)
 {
     <p>
         @Html.ActionLink("Criar uma nova Notícia ", "Create", null, new { @class = "btn btn-success btn-block" })
@@ -26,7 +26,7 @@
         {
           @*Apresentação das noticias na Página Inicial*@
             <div class="col-md-4 d-flex align-items-stretch" style="margin-bottom:20px;">
-                <div class="card text-white bg-dark" style="width: 22rem;">
+                <div class="card text-white" style="background-color: #15202B; width: 22rem;">
                     <img src="~/imagens/Noticias/@Html.DisplayTextFor(n => noticia.Capa)" class="card-img-top" alt="..." style="max-height: 189px;">
                     <div class="card-body">
                         <a href="@Url.Action("Details","Noticias",new { id =noticia.ID})" class="">

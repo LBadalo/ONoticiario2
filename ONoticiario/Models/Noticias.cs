@@ -29,6 +29,7 @@ namespace ONoticiario.Models
         //Titulo de uma Noticia
         [RegularExpression("^[a-zA-Z0-9_.,áãàâÃÀÁÂÔÒÓÕòóôõÉÈÊéèêíìîÌÍÎúùûçÇ!-.? ]*",ErrorMessage ="O {0} tem caracteres inválidos!")]
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório!")]
+        [Display(Name = "Título da Noticia")]
         public string Titulo { get; set; }
 
         //Capa da Noticia
@@ -44,9 +45,11 @@ namespace ONoticiario.Models
 
         //Paragrafo a negrito da Noticia
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório!")]
+        [Display(Name = "Subtítulo")]
         public string Descricao { get; set; }
 
         //Conteudo da Noticia
+        [Display(Name = "Conteúdo")]
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório!")]
         public string Conteudo { get; set; }
 

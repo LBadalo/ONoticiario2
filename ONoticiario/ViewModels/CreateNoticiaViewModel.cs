@@ -25,7 +25,7 @@ namespace ONoticiario.ViewModels
         //Conteudo da Noticia
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório!")]
         public string Conteudo { get; set; }
-
+        //Categorias
         public int[] IdsCategorias { get; set; }
 
         public IEnumerable<Categorias> ListaCategorias { get; set; }

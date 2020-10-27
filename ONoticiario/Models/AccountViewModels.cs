@@ -37,7 +37,7 @@ namespace IdentitySample.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar password")]
-        [Compare("Password", ErrorMessage = "Os campos password e password confirmation não são iguais ")]
+        [Compare("Password", ErrorMessage = "Palavra passe e sua confirmação não são iguais! ")]
         public string ConfirmPassword { get; set; }
 
         //atributos especificos do utilizador
@@ -60,7 +60,7 @@ namespace IdentitySample.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar password")]
-        [Compare("Password", ErrorMessage = "Os campos password e password confirmation  não são iguais ")]
+        [Compare("Password", ErrorMessage = "Palavra passe e sua confirmação não são iguais! ")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }

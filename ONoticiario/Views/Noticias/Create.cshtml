@@ -3,14 +3,16 @@
 @{
     ViewBag.Title = "Criar Noticia";
 }
-@if (Request.IsAuthenticated && User.IsInRole("Admin"))
-{
+@if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("Jornalista") )
+            {
 
-    using (Html.BeginForm("Create", "Noticias", FormMethod.Post, new { enctype = "multipart/form-data", @class = "card bg-dark p-3" }))
+                using (Html.BeginForm("Create", "Noticias", FormMethod.Post, new { enctype = "multipart/form-data", @class = "card p-3",
+                    @style = "background-color: #15202B;" }))
     {
-        @Html.AntiForgeryToken()
-        <h2>Nova Noticia</h2>
-        <div class="form-group">
+                    @Html.AntiForgeryToken()
+                    <h2>Nova Noticia</h2>
+            
+                    <div class="form-group">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <link rel="stylesheet" type="text/css" href="~/Content/personalCss.css">
             <div class="form-group">
@@ -24,7 +26,7 @@
                        class="btn btn-info btn-sm"
                        name="capaUpload"
                        style="color:blue"
-                       accept=".jpg"
+                       accept=".jpg, .png"
                        onchange="atulizaImagemEdit(event)"
                        value="Escolher Ficheiro" />
             </div>
@@ -64,9 +66,9 @@
         </div>
     }
 
-    <div>
-        @Html.ActionLink("Voltar atrás", "Index")
-    </div>
+<div>
+    @Html.ActionLink("Voltar atrás", "Index", null, new { @class = "btn btn-sm btn-danger" })
+</div>
 
 }
 <script>

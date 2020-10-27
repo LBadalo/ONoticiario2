@@ -1,16 +1,18 @@
 ﻿@model ONoticiario.ViewModels.CreateNoticiaViewModel
 
 @{
-    ViewBag.Title = "Criar Noticia";
+    ViewBag.Title = "Editar Noticia";
 }
 <link rel="stylesheet" type="text/css" href="~/Content/personalCss.css">
 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
 {
 
-    using (Html.BeginForm("Edit", "Noticias", FormMethod.Post, new { enctype = "multipart/form-data", @class = "card bg-dark p-3" }))
+    using (Html.BeginForm("Edit", "Noticias", FormMethod.Post, new { enctype = "multipart/form-data", @class = "card p-3",
+        @style = "background-color: #15202B;" }))
     {
         @Html.AntiForgeryToken()
         <h2>Editar Noticia</h2>
+        <hr style="background-color:darkcyan"/>
         <div class="form-horizontal">
 
 
@@ -26,7 +28,7 @@
                        class="btn btn-info btn-sm"
                        name="capaUpload"
                        style="color:blue"
-                       accept=".jpg"
+                       accept=".jpg, .png"
                        onchange="atulizaImagemEdit(event)" />
             </div>
 
@@ -56,7 +58,7 @@
                 <div class="col-md-5">
                     @Html.Partial("ListaCategorias", Model)
                 </div>
-               
+
             </div>
             <div class="form-group">
                 @Html.HiddenFor(c => c.Capa)
@@ -64,15 +66,19 @@
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Confirmar" class="btn btn-light" />
+
+
                 </div>
+
+
             </div>
 
         </div>
     }
 
-    <div>
-        @Html.ActionLink("Voltar atrás", "Index")
-    </div>
+<div>
+    @Html.ActionLink("Voltar atrás", "Index", null, new { @class = "btn btn-sm btn-danger" })
+</div>
 
 }
 <script>

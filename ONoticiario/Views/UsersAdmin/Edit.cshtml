@@ -8,7 +8,7 @@
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal bg-dark p-3">
+    <div class="form-horizontal p-3" style="background-color: #15202B;">
         
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
@@ -40,7 +40,7 @@
 }
 
 <div>
-    @Html.ActionLink("Voltar atrás", "Index",null ,new { @class = "btn btn-sm btn-light" })
+    @Html.ActionLink("Voltar atrás", "Index", null, new { @class = "btn btn-sm btn-danger" })
 </div>
 
 @section Scripts {
