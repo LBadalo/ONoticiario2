@@ -73,7 +73,7 @@ namespace IdentitySample.Controllers
         {
             if (!ModelState.IsValid)
             {
-               
+                TempData["Success"] = "Registado com Sucesso.";
                 return View(model);
             }
 
@@ -138,15 +138,14 @@ namespace IdentitySample.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    
                     Utilizadores utilizador = new Utilizadores {ID=db.Utilizadores.Max(a=>a.ID)+1, Nome = model.Utilizador.Nome, Descricao = model.Utilizador.Descricao,Avatar=model.Utilizador.Avatar, Username = model.Email,DataNascimento=model.Utilizador.DataNascimento};
                     db.Utilizadores.Add(utilizador);
                     db.SaveChanges();
                     var result1 = userManager.AddToRole(user.Id, "Utilizador");
-                    var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
-                    ViewBag.Link = callbackUrl;
-                    return View("DisplayEmail");
+                    TempData["Success"] = "Registado com Sucesso.";
+                    return RedirectToAction("Login");
+                    
                 }
                 AddErrors(result);
             }

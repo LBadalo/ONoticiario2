@@ -8,10 +8,10 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body style="background-color:#15202B">
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#15202B;">
         <a href="@Url.Action("Index","Noticias",new {categoria="" })" class="navbar-brand"><img src="~/imagens/Core_Img/logo.png" alt=""/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -27,7 +27,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Sobre", "About", "Noticias", null, new { @class = "nav-link" })
+                    @Html.ActionLink("Sobre", "About", null, new { @class = "nav-link" })
                 </li>
                 @if (Request.IsAuthenticated && (User.IsInRole("Admin")))
                 {

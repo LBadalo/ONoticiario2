@@ -40,6 +40,7 @@ namespace ONoticiario.Models
         //Descricao do utilizador
 
         [RegularExpression("^[a-zA-Z0-9_.,áãàâÃÀÁÂÔÒÓÕòóôõÉÈÊéèêíìîÌÍÎúùûçÇ!-.? ]*", ErrorMessage = "O {0} tem caracteres inválidos!")]
+        [Display(Name = "Descrição")]
         public string Descricao { get; set; }
 
         //Imagem do utilizador

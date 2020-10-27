@@ -37,8 +37,8 @@
                             @Html.DisplayTextFor(n => noticia.Descricao)
                         </p>
                         <a href="@Url.Action("Details","Noticias",new { id = noticia.ID })" style="margin-bottom:15px;">
-                            <a class="badge badge-secondary comments" aria-hidden="true">Comentários: @noticia.ListaComentarios.Count()</a>
                         </a>
+                        <a class="badge badge-secondary comments" aria-hidden="true">Comentários: @noticia.ListaComentarios.Count()</a>
                         @*Se contem role*@
                         @if (User.IsInRole("Admin"))
                         {
